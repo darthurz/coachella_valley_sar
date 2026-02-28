@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coachella Valley Chapter – Sons of the American Revolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #0a1a3c;
+      --red:    #b22234;
+      --gold:   #c9973a;
+      --cream:  #f5f0e8;
+      --white:  #ffffff;
+      --light:  #eae4d6;
+      --dark:   #060e20;
+      --text:   #1a1a2e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--dark);
+      color: #aaa;
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: .08em;
+      padding: 8px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar a { color: var(--gold); text-decoration: none; margin-left: 20px; }
+    .topbar a:hover { color: var(--white); }
+
+    /* ── NAV ── */
+    header {
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--gold);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-seal {
+      width: 56px; height: 56px;
+      border-radius: 4px;
+      background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 2px;
+    }
+    .logo-seal img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+    }
+    .logo-text { line-height: 1.2; }
+    .logo-text span {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: .12em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .logo-text strong {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--white);
+      letter-spacing: .04em;
+    }
+
+    nav ul { list-style: none; display: flex; gap: 4px; }
+    nav ul li { position: relative; }
+    nav ul li a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: .07em;
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+      transition: color .2s;
+      text-transform: uppercase;
+    }
+    nav ul li a:hover { color: var(--gold); }
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--navy);
+      border-top: 2px solid var(--gold);
+      min-width: 210px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    }
+    nav ul li:hover .dropdown { display: block; }
+    nav ul li .dropdown a {
+      font-size: 0.68rem;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    nav ul li .dropdown a:hover { background: rgba(201,151,58,.12); }
+
+    .nav-ctas { display: flex; gap: 10px; }
+    .btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 9px 18px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all .2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-gold { background: var(--gold); color: var(--navy); font-weight: 700; }
+    .btn-gold:hover { background: #e0ad47; }
+    .btn-outline { border: 1.5px solid var(--gold); color: var(--gold); background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 90vh;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--dark);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('hero.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(10,26,60,.88) 0%, rgba(6,14,32,.65) 50%, rgba(178,34,52,.5) 100%);
+    }
+    .hero-stars {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 55%, rgba(255,255,255,.4) 0%, transparent 100%);
+    }
+    .hero-stripe-left {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 8px;
+      background: repeating-linear-gradient(to bottom, var(--red) 0px, var(--red) 40px, var(--white) 40px, var(--white) 80px);
+    }
+    .hero-stripe-right {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 8px;
+      background: repeating-linear-gradient(to bottom, var(--red) 0px, var(--red) 40px, var(--white) 40px, var(--white) 80px);
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      color: var(--white);
+      max-width: 800px;
+      padding: 40px;
+      animation: fadeUp .9s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: .25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--white);
+      text-shadow: 0 2px 20px rgba(0,0,0,.5);
+      margin-bottom: 10px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 28px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.82);
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero-scroll {
+      position: absolute;
+      bottom: 30px; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.4);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 80px 30px; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: .25em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .title-rule {
+      width: 60px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 32px;
+    }
+    .title-rule.center { margin-left: auto; margin-right: auto; }
+
+    /* ── NEWS ── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .news-card {
+      background: var(--white);
+      border: 1px solid #ddd5c0;
+      border-top: 3px solid var(--navy);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(10,26,60,.12); }
+    .news-card-img {
+      height: 190px;
+      background: linear-gradient(135deg, var(--navy), var(--red));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: rgba(255,255,255,.2);
+    }
+    .news-card-body { padding: 22px; }
+    .news-meta {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: .1em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .news-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .news-card p { font-size: 0.88rem; color: #555; line-height: 1.7; }
+    .read-more {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: .12em;
+      color: var(--red);
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid var(--red);
+    }
+
+    /* ── PROGRAMS ── */
+    .programs-section { background: var(--navy); }
+    .programs-section .section-title { color: var(--white); }
+    .programs-section .section-label { color: var(--gold); }
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .program-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(201,151,58,.25);
+      padding: 28px 24px;
+      transition: background .25s, transform .25s;
+      cursor: pointer;
+    }
+    .program-card:hover { background: rgba(201,151,58,.12); transform: translateY(-4px); }
+    .program-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .program-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .program-card p { font-size: 0.85rem; color: rgba(255,255,255,.65); line-height: 1.7; }
+
+    /* ── MISSION ── */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) { .mission-grid { grid-template-columns: 1fr; } }
+    .mission-card {
+      text-align: center;
+      padding: 40px 28px;
+      background: var(--white);
+      border-bottom: 4px solid var(--gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .mission-card .icon {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+    }
+    .mission-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .mission-card p { font-size: 0.88rem; color: #666; line-height: 1.75; }
+
+    /* ── ABOUT BAND ── */
+    .about-band {
+      background: var(--red);
+      color: var(--white);
+      padding: 70px 30px;
+    }
+    .about-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; } }
+    .about-band .section-label { color: rgba(255,255,255,.6); }
+    .about-band .section-title { color: var(--white); }
+    .about-band .title-rule { background: rgba(255,255,255,.5); }
+    .about-band p { font-size: 0.97rem; line-height: 1.85; color: rgba(255,255,255,.85); margin-bottom: 16px; }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .stat-box {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.7);
+      text-transform: uppercase;
+    }
+
+    /* ── EVENTS ── */
+    .events-list { margin-top: 40px; }
+    .event-item {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 22px 0;
+      border-bottom: 1px solid #ddd5c0;
+    }
+    .event-date {
+      min-width: 64px;
+      text-align: center;
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 6px;
+    }
+    .event-date .month {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: .12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+    }
+    .event-date .day {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+    .event-info h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .event-info p { font-size: 0.85rem; color: #666; line-height: 1.6; }
+    .event-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      background: var(--light);
+      color: var(--red);
+      border: 1px solid #ccc;
+      margin-top: 6px;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 100%);
+      padding: 80px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 20px,
+        rgba(201,151,58,.04) 20px, rgba(201,151,58,.04) 21px
+      );
+    }
+    .cta-band .section-label { color: var(--gold); }
+    .cta-band .section-title { color: var(--white); }
+    .cta-band p { color: rgba(255,255,255,.7); max-width: 560px; margin: 0 auto 36px; font-size: 1rem; line-height: 1.8; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-red { background: var(--red); color: var(--white); }
+    .btn-red:hover { background: #9a1c2a; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.6);
+      padding: 60px 30px 0;
+    }
+    .footer-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.4fr;
+      gap: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.8; margin-top: 16px; margin-bottom: 20px; }
+    .footer-logo-seal {
+      width: 70px; height: 70px;
+      background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      padding: 4px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+    footer h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 10px; }
+    footer ul li a {
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color .2s;
+    }
+    footer ul li a:hover { color: var(--gold); }
+    .footer-event-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+    .footer-event-date {
+      min-width: 44px;
+      text-align: center;
+      background: rgba(255,255,255,.07);
+      padding: 6px 4px;
+      font-family: 'Cinzel', serif;
+    }
+    .footer-event-date .m { font-size: 0.55rem; color: var(--gold); letter-spacing: .1em; display: block; }
+    .footer-event-date .d { font-size: 1.2rem; font-weight: 700; color: var(--white); line-height: 1; }
+    .footer-event-info { font-size: 0.8rem; color: rgba(255,255,255,.55); line-height: 1.5; }
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,.4); text-decoration: none; margin-left: 20px; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ── PAGE HERO (inner pages) ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
+      padding: 60px 30px;
+      text-align: center;
+      border-bottom: 3px solid var(--gold);
+    }
+    .page-hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      color: var(--white);
+    }
+    .page-hero p { color: rgba(255,255,255,.6); margin-top: 10px; font-size: 1rem; }
+    .breadcrumb {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: .12em;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    /* ── CONTACT FORM ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      margin-top: 50px;
+    }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info-item { display: flex; gap: 16px; margin-bottom: 28px; }
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: var(--navy);
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-info-item h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: .1em;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .contact-info-item p { font-size: 0.88rem; color: #666; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: .1em;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #ccc;
+      background: var(--white);
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--navy); }
+    .form-group textarea { height: 140px; resize: vertical; }
+
+    /* ── MEMBERSHIP ── */
+    .member-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    @media (max-width: 768px) { .member-steps { grid-template-columns: 1fr; } }
+    .step-card {
+      padding: 36px 28px;
+      background: var(--white);
+      border: 1px solid #ddd5c0;
+      position: relative;
+    }
+    .step-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 3.5rem;
+      color: var(--light);
+      position: absolute;
+      top: 10px; right: 18px;
+      line-height: 1;
+    }
+    .step-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .step-card p { font-size: 0.88rem; color: #666; line-height: 1.75; }
+
+    /* ── TAB NAVIGATION ── */
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--navy);
+      margin-bottom: 0;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 14px 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #666;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all .2s;
+    }
+    .tab-btn.active { color: var(--navy); border-bottom-color: var(--gold); }
+    .tab-btn:hover { color: var(--navy); }
+    .tab-content { display: none; padding: 40px 0; }
+    .tab-content.active { display: block; }
+
+    /* ── MEMBER TABLE ── */
+    .member-row-first td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #e8e0d0;
+      vertical-align: top;
+      background: var(--white);
+    }
+    .member-row-first td:first-child {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      color: var(--navy);
+      font-weight: 600;
+      border-left: 3px solid var(--gold);
+    }
+    .member-row-cont td {
+      padding: 6px 16px;
+      border-bottom: 1px solid #ede8dd;
+      vertical-align: top;
+      background: #faf8f4;
+      color: #666;
+      font-size: 0.85rem;
+    }
+    .member-row-cont td:first-child {
+      border-left: 3px solid transparent;
+    }
+    .member-row-first:nth-child(even) td { background: #f9f6f0; }
+    tbody tr td:last-child {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: .06em;
+      color: var(--red);
+      white-space: nowrap;
+    }
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── RESPONSIVE NAV ── */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 1024px) {
+      .hamburger { display: block; }
+      nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--navy); padding: 20px; }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; }
+      nav ul li .dropdown { position: static; border: none; box-shadow: none; padding-left: 16px; display: none; }
+      nav ul li:hover .dropdown { display: block; }
+      .topbar .topbar-right { display: none; }
+      .nav-ctas { display: none; }
+    }
+    @media (max-width: 768px) {
+      .news-grid { grid-template-columns: 1fr; }
+      .programs-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .programs-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── MEMBERS TABLE ── */
+    .members-table-wrap {
+      overflow-x: auto;
+      margin-top: 32px;
+      border: 1px solid #ddd5c0;
+      border-radius: 4px;
+    }
+    .members-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .members-table thead tr {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .members-table thead th {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 14px 20px;
+      text-align: left;
+    }
+    .members-table thead th:first-child { color: var(--gold); }
+    .members-table tbody tr.member-row {
+      background: var(--white);
+      border-top: 2px solid #ddd5c0;
+    }
+    .members-table tbody tr.patriot-row {
+      background: var(--cream);
+    }
+    .members-table tbody tr:hover { background: #f0ebe0; }
+    .members-table td {
+      padding: 10px 20px;
+      border-bottom: 1px solid #e8e0d0;
+      vertical-align: top;
+    }
+    .members-table td.member-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      color: var(--navy);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .members-table-note {
+      font-size: 0.82rem;
+      color: #666;
+      font-style: italic;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>Coachella Valley Chapter • Sons of the American Revolution • Serving the Desert Communities</span>
+  <span>
+    <a href="#" onclick="showPage('join')">Join SAR</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+  </span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-inner">
+    <a href="#" class="logo-wrap" onclick="showPage('home')">
+      <div class="logo-seal"><img src="logo.jpg" alt="SAR Logo"/></div>
+      <div class="logo-text">
+        <span>Sons of the American Revolution</span>
+        <strong>Coachella Valley Chapter</strong>
+      </div>
+    </a>
+    <button class="hamburger" onclick="toggleNav()">☰</button>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li>
+          <a href="#">Our Chapter ▾</a>
+          <div class="dropdown">
+            <a href="#" onclick="showPage('about')">Chapter History</a>
+            <a href="#" onclick="showPage('about')">Chapter Mission</a>
+            <a href="#" onclick="showPage('about'); setTimeout(()=>{document.querySelectorAll('#page-about .tab-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('#page-about .tab-content').forEach(t=>t.classList.remove('active')); document.querySelector('#page-about .tab-btn[onclick*=tab-officers]').classList.add('active'); document.getElementById('tab-officers').classList.add('active');},10)">Chapter Officers</a>
+            <a href="#" onclick="showPage('members')">Chapter Members</a>
+            <a href="#" onclick="showPage('about')">Chapter Photos</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Our Programs ▾</a>
+          <div class="dropdown">
+            <a href="#" onclick="showPage('programs')">Wreaths Across America</a>
+            <a href="#" onclick="showPage('programs')">Boy / Eagle Scouts</a>
+            <a href="#" onclick="showPage('programs')">Youth Awards & Contests</a>
+            <a href="#" onclick="showPage('programs')">Genealogy Workshops</a>
+            <a href="#" onclick="showPage('programs')">Patriot Grave Marking</a>
+            <a href="#" onclick="showPage('programs')">Local Events</a>
+          </div>
+        </li>
+        <li><a href="#" onclick="showPage('news')">News</a></li>
+        <li><a href="#" onclick="showPage('events')">Events</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-ctas">
+      <a href="#" class="btn btn-outline" onclick="showPage('join')">Join Us</a>
+      <a href="#" class="btn btn-gold" onclick="showPage('donate')">Donate</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ HOME PAGE ═══════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-stars"></div>
+    <div class="hero-stripe-left"></div>
+    <div class="hero-stripe-right"></div>
+    <div class="hero-content">
+      <img src="logo.jpg" alt="Coachella Valley SAR Logo" style="width:160px;height:160px;object-fit:contain;border-radius:8px;background:rgba(255,255,255,0.92);padding:10px;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.4);"/>
+      <div class="hero-eyebrow">★ &nbsp; Serving the Desert Communities &nbsp; ★</div>
+      <h1>Coachella Valley Chapter<br/><span>Sons of the American Revolution</span></h1>
+      <div class="hero-sub">Honoring Our Patriots · Preserving Our Heritage · Inspiring Future Generations</div>
+      <p>Dedicated to promoting patriotism, preserving American history, and honoring the brave men who achieved independence for the United States of America — right here in the heart of the desert.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn btn-gold" onclick="showPage('about')">Learn About Us</a>
+        <a href="#" class="btn btn-outline" onclick="showPage('join')">Become a Member</a>
+      </div>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <!-- LATEST NEWS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">★ &nbsp; Stay Informed</div>
+      <h2 class="section-title">Latest Chapter News</h2>
+      <div class="title-rule"></div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-card-img" style="height:190px;overflow:hidden;padding:0;background:none;">
+            <img src="hero.jpg" alt="Chapter Members at Parade" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"/>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta">March 2026 &nbsp;·&nbsp; Chapter Meeting</div>
+            <h3>March Chapter Meeting Recap</h3>
+            <p>Members gathered for a productive evening of chapter business, recognizing outstanding service and planning upcoming patriotic events across the valley.</p>
+            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">February 2026 &nbsp;·&nbsp; Community</div>
+            <h3>Wreaths Across America – Desert Memorial Park</h3>
+            <p>Chapter members honored fallen veterans by placing wreaths at Desert Memorial Park, drawing strong community support despite the cool winter morning.</p>
+            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">January 2026 &nbsp;·&nbsp; America 250</div>
+            <h3>America 250 Preparations Underway</h3>
+            <p>Our chapter is actively planning events and exhibits to commemorate the nation's 250th birthday in 2026. Join us in making this milestone unforgettable.</p>
+            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">December 2025 &nbsp;·&nbsp; Youth</div>
+            <h3>Eagle Scout Award Ceremony</h3>
+            <p>The Coachella Valley Chapter proudly presented the SAR Eagle Scout Award to two outstanding young men for their dedication to patriotism and community.</p>
+            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section programs-section">
+    <div class="section-inner">
+      <div class="section-label">★ &nbsp; What We Do</div>
+      <h2 class="section-title">Our Programs</h2>
+      <div class="title-rule"></div>
+      <div class="programs-grid">
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">🎖️</div>
+          <h3>Wreaths Across America</h3>
+          <p>Honoring fallen veterans by placing wreaths on their graves at Desert Memorial Park every December.</p>
+        </div>
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">⚜️</div>
+          <h3>Boy & Eagle Scouts</h3>
+          <p>Supporting BSA troops across the valley with patriotism awards and civic engagement programs.</p>
+        </div>
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">🏆</div>
+          <h3>Youth Awards & Contests</h3>
+          <p>Annual scholarships, essay contests, and awards connecting students to the American Revolution.</p>
+        </div>
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">🌳</div>
+          <h3>Genealogy Workshops</h3>
+          <p>Helping community members trace their lineage back to American Revolutionary Patriots.</p>
+        </div>
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">⭐</div>
+          <h3>Patriot Grave Marking</h3>
+          <p>Recognizing and marking the graves of Revolutionary War Patriots buried in the Coachella Valley.</p>
+        </div>
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">🎉</div>
+          <h3>Local Events & Celebrations</h3>
+          <p>Participating in Flag Day, Memorial Day, Veterans Day, and Independence Day across our desert communities.</p>
+        </div>
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">🇺🇸</div>
+          <h3>America 250</h3>
+          <p>Planning special commemorations for the United States' 250th anniversary of independence in 2026.</p>
+        </div>
+        <div class="program-card" onclick="showPage('programs')">
+          <div class="program-icon">📜</div>
+          <h3>ROTC & JROTC Awards</h3>
+          <p>Recognizing outstanding cadets for excellence in military training and patriotic service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="section" style="background: var(--light);">
+    <div class="section-inner">
+      <div style="text-align:center;">
+        <div class="section-label">★ &nbsp; Our Purpose</div>
+        <h2 class="section-title">Our Mission</h2>
+        <div class="title-rule center"></div>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="icon">📜</div>
+          <h3>Remembering Our Past</h3>
+          <p>We preserve the memory of the Patriots who fought and sacrificed for American independence, ensuring their legacy is never forgotten by future generations.</p>
+        </div>
+        <div class="mission-card">
+          <div class="icon">🦅</div>
+          <h3>Promoting Core Values</h3>
+          <p>We champion the ideals of patriotism, civic responsibility, and love of country through education, community service, and commemorative programs.</p>
+        </div>
+        <div class="mission-card">
+          <div class="icon">🌟</div>
+          <h3>Shaping Young Minds</h3>
+          <p>We invest in the next generation through youth awards, scholarships, and partnerships with schools and scouting organizations across the Coachella Valley.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT BAND -->
+  <section class="about-band">
+    <div class="about-inner">
+      <div>
+        <div class="section-label">★ &nbsp; Who We Are</div>
+        <h2 class="section-title">About Our Chapter</h2>
+        <div class="title-rule"></div>
+        <p>The Coachella Valley Chapter of the Sons of the American Revolution is a proud member of the California Society SAR. We are a non-profit, non-partisan organization of male descendants of Patriots who served during the American Revolutionary War.</p>
+        <p>Our chapter meets monthly to conduct business, recognize member achievements, host speakers, and coordinate our community programs. We welcome new members who can document their lineage to a Revolutionary War Patriot.</p>
+        <a href="#" class="btn btn-gold" onclick="showPage('about')" style="margin-top:10px; display:inline-block;">Our Full Story →</a>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <span class="stat-num">1776</span>
+          <span class="stat-label">Year of Independence</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">1889</span>
+          <span class="stat-label">SAR Founded</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Active Members</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">250</span>
+          <span class="stat-label">America's Birthday</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING EVENTS PREVIEW -->
+  <section class="section">
+    <div class="section-inner">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+        <div>
+          <div class="section-label">★ &nbsp; Mark Your Calendar</div>
+          <h2 class="section-title">Upcoming Events</h2>
+          <div class="title-rule"></div>
+        </div>
+        <a href="#" class="btn btn-outline" onclick="showPage('events')" style="color:var(--navy); border-color:var(--navy);">View All Events →</a>
+      </div>
+      <div class="events-list">
+        <div class="event-item">
+          <div class="event-date"><span class="month">Mar</span><span class="day">20</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-date"><span class="month">May</span><span class="day">15</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Jul</span><span class="day">4</span></div>
+          <div class="event-info">
+            <h4>Independence Day – America 250 Celebration</h4>
+            <p>A landmark celebration marking 250 years of American independence. Special ceremonies, speakers, and community festivities.</p>
+            <span class="event-tag">America 250</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN CTA -->
+  <section class="cta-band">
+    <div style="position:relative;">
+      <div class="section-label">★ &nbsp; Become Part of History</div>
+      <h2 class="section-title">Are You a Descendant of a Revolutionary War Patriot?</h2>
+      <p>If you can document your lineage to a man who served the cause of American independence, you may be eligible to join the Sons of the American Revolution.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn btn-gold" onclick="showPage('join')">Apply for Membership</a>
+        <a href="#" class="btn btn-outline" onclick="showPage('contact')">Ask a Question</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+<!-- ═══════════════════════════ ABOUT PAGE ═══════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Our Chapter</div>
+    <h1>About Our Chapter</h1>
+    <p>History, Mission, Officers &amp; More</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab(this,'tab-history')">Chapter History</button>
+        <button class="tab-btn" onclick="switchTab(this,'tab-mission')">Our Mission</button>
+        <button class="tab-btn" onclick="switchTab(this,'tab-officers')">Officers</button>
+        <button class="tab-btn" onclick="switchTab(this,'tab-members')">Membership</button>
+      </div>
+
+      <div id="tab-history" class="tab-content active">
+        <div class="section-label">★ &nbsp; Welcome Message</div>
+        <h2 class="section-title">Chapter History</h2>
+        <div class="title-rule"></div>
+        <p style="max-width:740px; line-height:1.9; margin-bottom:20px;">The Coachella Valley Chapter of Sons of the American Revolution was established on November 5th, 1994, and serves the Coachella Valley communities and surrounding area. Our members tend to be centered around Rancho Mirage, California, but come from as far away as places like Blythe in the east, and Hemet on the west side of the San Jacinto mountain range.</p>
+        <p style="max-width:740px; line-height:1.9; margin-bottom:32px;">If you reside in this area and are a male descendant of a Patriot ancestor that took part in the American Revolution, we would love to hear from you! Qualifying participation in the American Revolution takes many forms: military service in the militias or Continental Army; providing money and/or supplies to the troops; pledging allegiance to the cause; suffering depredation as a result of the war; and/or serving as a civil servant or in a governing or judicial role in the colonial government during wartime.</p>
+        <p style="max-width:740px; line-height:1.9; margin-bottom:24px; font-family:'Cinzel',serif; font-size:0.9rem; color:var(--navy);">The chapter is proud to announce the following programs to support the Coachella Valley communities:</p>
+        <div style="max-width:740px; display:grid; gap:20px; margin-bottom:32px;">
+          <div style="background:var(--white); border-left:4px solid var(--gold); padding:20px 24px;">
+            <h4 style="font-family:'Cinzel',serif; color:var(--navy); margin-bottom:8px;">Wreaths Across America</h4>
+            <p style="line-height:1.8;">The chapter participates in the Wreaths Across America program, which honors veterans by placing wreaths on their graves during the holiday season. The chapter also raises funds for this program.</p>
+          </div>
+          <div style="background:var(--white); border-left:4px solid var(--gold); padding:20px 24px;">
+            <h4 style="font-family:'Cinzel',serif; color:var(--navy); margin-bottom:8px;">America 250</h4>
+            <p style="line-height:1.8;">In 2026, our country will celebrate its 250th birthday, marking the anniversary of the American Revolution. Our chapter will actively participate in commemorating and endorsing this significant event.</p>
+          </div>
+          <div style="background:var(--white); border-left:4px solid var(--gold); padding:20px 24px;">
+            <h4 style="font-family:'Cinzel',serif; color:var(--navy); margin-bottom:8px;">Memorial Monument</h4>
+            <p style="line-height:1.8;">In December of 2025, we erected a monument in Desert Memorial Park Cemetery in Cathedral City to honor George Washington and the Patriots who founded the United States of America. This monument is intended to be part of and commemorate the America 250 celebration.</p>
+          </div>
+          <div style="background:var(--white); border-left:4px solid var(--gold); padding:20px 24px;">
+            <h4 style="font-family:'Cinzel',serif; color:var(--navy); margin-bottom:8px;">Veterans Day Parade</h4>
+            <p style="line-height:1.8;">Every year, our chapter marches in the annual Palm Springs Veterans Day Parade in honor of our heroic Veterans. We march with a horse-drawn carriage and dressed in Continental Army Uniforms showing our appreciation for our Veterans.</p>
+          </div>
+        </div>
+        <p style="max-width:740px; line-height:1.9; margin-bottom:16px;">The Coachella Valley Chapter welcomes all those interested in the chapter's objectives to join them at their monthly meetings. The chapter meets on the third Friday of each month at 11:45 AM, October through May, at the Mission Hills Country Club in Rancho Mirage.</p>
+        <p style="max-width:740px; line-height:1.9;">For more information, please email us at <a href="mailto:coachellavalleysar@googlegroups.com" style="color:var(--red);">coachellavalleysar@googlegroups.com</a>.</p>
+      </div>
+
+      <div id="tab-mission" class="tab-content">
+        <div class="section-label">★ &nbsp; Why We Exist</div>
+        <h2 class="section-title">Chapter Mission</h2>
+        <div class="title-rule"></div>
+        <p style="max-width:740px; line-height:1.9; margin-bottom:20px;">The mission of the Coachella Valley Chapter SAR is to carry on the spirit of patriotism, civic responsibility, and love of liberty that inspired our Revolutionary War ancestors. We accomplish this through education, community service, and honoring the legacy of those who established our great nation.</p>
+        <div class="mission-grid" style="margin-top:36px;">
+          <div class="mission-card">
+            <div class="icon">📜</div>
+            <h3>Preserve History</h3>
+            <p>We document, commemorate, and share the stories of Revolutionary War Patriots to ensure their sacrifices are remembered.</p>
+          </div>
+          <div class="mission-card">
+            <div class="icon">🦅</div>
+            <h3>Promote Patriotism</h3>
+            <p>We inspire love of country through ceremonies, public events, and engagement with schools and civic organizations.</p>
+          </div>
+          <div class="mission-card">
+            <div class="icon">🌟</div>
+            <h3>Serve Our Community</h3>
+            <p>We give back to the Coachella Valley through volunteer service, youth programs, and charitable contributions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-officers" class="tab-content">
+        <div class="section-label">★ &nbsp; Leadership</div>
+        <h2 class="section-title">Chapter Officers</h2>
+        <div class="title-rule"></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; margin-top:8px;">
+          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
+            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
+            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">PRESIDENT</div>
+            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">David Arthurs</div>
+          </div>
+          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
+            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
+            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">VICE PRESIDENT</div>
+            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Michael J. Fox</div>
+          </div>
+          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
+            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
+            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">TREASURER</div>
+            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">William Haines</div>
+          </div>
+          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
+            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
+            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">REGISTRAR</div>
+            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Dr. Kenneth Vick</div>
+          </div>
+          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
+            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
+            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">SECRETARY</div>
+            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Benjamin DeLanty</div>
+          </div>
+          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
+            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">✝</div>
+            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">CHAPLAIN</div>
+            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Ed Oehler</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-members" class="tab-content">
+        <div class="section-label">★ &nbsp; Our Members</div>
+        <h2 class="section-title">Chapter Members &amp; Their Patriot Ancestors</h2>
+        <div class="title-rule"></div>
+        <p style="max-width:740px; line-height:1.9; margin-bottom:12px;">Each member of the Coachella Valley Chapter has documented their lineage to a Patriot who served the cause of American independence. An asterisk (*) denotes a Patriot who also appears in the SAR Patriot Index.</p>
+        <p style="font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:.08em; color:var(--gold); margin-bottom:28px;">* Denotes Patriot listed in the SAR Patriot Index &nbsp;·&nbsp; "Memorial" denotes a memorial membership</p>
+
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+            <thead>
+              <tr style="background:var(--navy); color:var(--white);">
+                <th style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:.1em; text-transform:uppercase; padding:14px 16px; text-align:left; border-right:1px solid rgba(255,255,255,.1);">Member</th>
+                <th style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:.1em; text-transform:uppercase; padding:14px 16px; text-align:left; border-right:1px solid rgba(255,255,255,.1);">Patriot Ancestor</th>
+                <th style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:.1em; text-transform:uppercase; padding:14px 16px; text-align:left;">Service</th>
+              </tr>
+            </thead>
+            <tbody>
+<tr class="member-row-first"><td>Raymond Allen</td><td>Beauford Pleasant</td><td>Supplies</td></tr>
+<tr class="member-row-first"><td>Wilbern Allen</td><td>Isaac Olmstead</td><td>Captain</td></tr>
+<tr class="member-row-first"><td>James Amidon</td><td>Roger Amidon</td><td>Militia</td></tr>
+<tr class="member-row-first"><td>David Arthurs, Pres</td><td>Jeremiah Brann</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>Joseph Reeder</td><td>Supply Tax</td></tr>
+<tr class="member-row-cont"><td></td><td>William Brann, Sr. *</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>Abraham Fulton</td><td>Supply Tax</td></tr>
+<tr class="member-row-cont"><td></td><td>John Boyd</td><td>Captain</td></tr>
+<tr class="member-row-first"><td>David Arthurs, Memorial</td><td>Jeremiah Brann</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Russell Bauer</td><td>John Wilson Langdon</td><td>Private</td></tr>
+<tr class="member-row-first"><td>John Bennett</td><td>Amos Garnsey</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Brett Bird</td><td>Noah Crooker *</td><td>Drummer</td></tr>
+<tr class="member-row-first"><td>Kevin Bird</td><td>Noah Crooker *</td><td>Drummer</td></tr>
+<tr class="member-row-first"><td>Bryan Boomershine</td><td>Thomas Speakman</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Steven Bottom</td><td>George Carpenter, Sr.</td><td>Private</td></tr>
+<tr class="member-row-first"><td>William Lavel Brady</td><td>Baxter Davis</td><td>2nd Lieutenant</td></tr>
+<tr class="member-row-first"><td>Steven Brown</td><td>Thomas Lee *</td><td>Captain</td></tr>
+<tr class="member-row-first"><td>Christopher Cerillo</td><td>Joseph Clark</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>Hercules Mooney *</td><td>Lt. Colonel</td></tr>
+<tr class="member-row-cont"><td></td><td>Jonathan Mooney *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Sean Core</td><td>Christian Core *</td><td>Oath</td></tr>
+<tr class="member-row-first"><td>Dr. James Cox</td><td>Henry Mills</td><td>Services</td></tr>
+<tr class="member-row-first"><td>Terrel Crary</td><td>Ezra Crary</td><td>Captain</td></tr>
+<tr class="member-row-first"><td>Griffin Cunningham</td><td>Jacob Brown</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Donald Damron</td><td>Tigner Dameron</td><td>Services</td></tr>
+<tr class="member-row-first"><td>Benjamin DeLanty, Secr</td><td>Samuel Callender</td><td>Sergeant</td></tr>
+<tr class="member-row-first"><td>Douglas Enroth</td><td>Jeremiah Wood</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Thomas Foerster</td><td>David Haymaker *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Timothy Foerster</td><td>David Haymaker *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Michael Fox, VP</td><td>John Poulter</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Carl Gilmore</td><td>Rudolph Hines</td><td>Corporal</td></tr>
+<tr class="member-row-first"><td>Richard Griffin</td><td>Joshua Goodson *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>William Haines, Treas</td><td>Henry Haynes</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>Abraham Waglom</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>John Trautman</td><td>Services</td></tr>
+<tr class="member-row-cont"><td></td><td>John Waglom</td><td>Captain</td></tr>
+<tr class="member-row-cont"><td></td><td>Peter Parker</td><td>Services</td></tr>
+<tr class="member-row-cont"><td></td><td>Joseph Seaman</td><td>Services</td></tr>
+<tr class="member-row-first"><td>Michael Hopkins</td><td>John Worster</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Anthony Hoskins</td><td>John Post *</td><td>Qtr Master</td></tr>
+<tr class="member-row-first"><td>Edward Howell</td><td>Thomas Duckett</td><td>Civil Service</td></tr>
+<tr class="member-row-first"><td>James Kearin</td><td>Jeremiah Brann</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Michael Landes</td><td>Jacob Kulp</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Curtis Lane</td><td>William Roarke</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>John Tate, Sr.</td><td>Sergeant</td></tr>
+<tr class="member-row-cont"><td></td><td>John Upton</td><td>Corporal</td></tr>
+<tr class="member-row-cont"><td></td><td>Henry Garrett</td><td>Captain</td></tr>
+<tr class="member-row-cont"><td></td><td>John McMurtry</td><td>Ensign</td></tr>
+<tr class="member-row-cont"><td></td><td>Elizabeth Ashton/Garrett</td><td>Services</td></tr>
+<tr class="member-row-cont"><td></td><td>William Garrett</td><td>Services</td></tr>
+<tr class="member-row-cont"><td></td><td>Thomas Johnson, Jr.</td><td>Captain</td></tr>
+<tr class="member-row-cont"><td></td><td>Henry Bloss</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>John Roberts</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>Arthur Slayden *</td><td>Service</td></tr>
+<tr class="member-row-first"><td>Larry Frank Lane, Memorial</td><td>John Roberts *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Layman, Daniel</td><td>William Poage *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Leonard Lyon</td><td>Moses Lyon</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Harry Martin, II</td><td>Andrew Hughes</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Robert McGuire</td><td>Nathan Bassett</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Glenn Morrison</td><td>Ralph Voorhees *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Eugene Moses</td><td>Mark Moses</td><td>Services</td></tr>
+<tr class="member-row-cont"><td></td><td>Abraham Perkins</td><td>Captain</td></tr>
+<tr class="member-row-cont"><td></td><td>Jacob Thomas</td><td>Private</td></tr>
+<tr class="member-row-first"><td>James Murray</td><td>Cornelius Stagg</td><td>Sergeant</td></tr>
+<tr class="member-row-first"><td>Edward Oehler</td><td>John Corwin, Sr.</td><td>Lieutenant</td></tr>
+<tr class="member-row-cont"><td></td><td>Abner Stanford</td><td>Corporal</td></tr>
+<tr class="member-row-first"><td>Barry Opdyke</td><td>Daniel Ent</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>Richard Opdycke</td><td>Juror</td></tr>
+<tr class="member-row-first"><td>Eli Owens</td><td>William McDowell *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Brennan Pardee</td><td>John Pardee</td><td>Corporal</td></tr>
+<tr class="member-row-first"><td>James "Tony" Pardee</td><td>John Pardee</td><td>Corporal</td></tr>
+<tr class="member-row-first"><td>Tygh Runyan</td><td>Hugh Runyon</td><td>Colonel</td></tr>
+<tr class="member-row-first"><td>Jimmie Rutledge</td><td>John Josling</td><td>Corporal</td></tr>
+<tr class="member-row-first"><td>William Schroeder</td><td>Micah Eldredge</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Jonathan Scott</td><td>John Alexander</td><td>Captain</td></tr>
+<tr class="member-row-first"><td>Richard Shay</td><td>Seth Capron</td><td>Corporal</td></tr>
+<tr class="member-row-cont"><td></td><td>Elisha Capron</td><td>Private</td></tr>
+<tr class="member-row-cont"><td></td><td>Bezaleel Mann</td><td>Services</td></tr>
+<tr class="member-row-first"><td>Richard Small</td><td>Ephraim Lombard</td><td>Services</td></tr>
+<tr class="member-row-first"><td>Michael Smith</td><td>John Smith</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Kenneth Tebbetts</td><td>Elijah Hayes</td><td>Civil Service</td></tr>
+<tr class="member-row-first"><td>David Thomas</td><td>Henry Gascho</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Vincent Thompson</td><td>William Thompson</td><td>Lieutenant</td></tr>
+<tr class="member-row-first"><td>Dr. Kenneth Vick II, Regr</td><td>William Rowntree</td><td>Sergeant</td></tr>
+<tr class="member-row-cont"><td></td><td>Matthew Vick *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Steven Waggoner</td><td>Isaac Waggoner *</td><td>Private</td></tr>
+<tr class="member-row-first"><td>Daren West</td><td>James West *</td><td>Sergeant</td></tr>
+<tr class="member-row-first"><td>Aaron Wilkinson</td><td>Nicholas Straw</td><td>Lieutenant</td></tr>
+<tr class="member-row-first"><td>Duke Young</td><td>David Morgan *</td><td>Captain</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:24px; font-size:0.82rem; color:#888; font-style:italic;">To update this list or report an error, please <a href="#" onclick="showPage('contact')" style="color:var(--red);">contact us</a>.</p>
+      </div>
+    </div>
+  </section>
+</div><!-- /about -->
+
+<!-- ═══════════════════════════ PROGRAMS PAGE ═══════════════════════════ -->
+<div id="page-programs" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Our Programs</div>
+    <h1>Our Programs</h1>
+    <p>Serving the Coachella Valley Through Patriotic Action</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="programs-grid" style="--nav-grid:1fr;">
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">🎖️</div>
+          <h3 style="color:var(--navy);font-size:1rem;">Wreaths Across America</h3>
+          <p style="color:#555;">Each December, our chapter participates in the national Wreaths Across America program, placing fresh wreaths on the graves of veterans at Desert Memorial Park in Cathedral City to honor their sacrifice and keep their memory alive.</p>
+        </div>
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">⚜️</div>
+          <h3 style="color:var(--navy);font-size:1rem;">Boy & Eagle Scouts</h3>
+          <p style="color:#555;">The SAR has a proud partnership with the Boy Scouts of America. Our chapter presents the SAR Eagle Scout Award to deserving young men who exemplify patriotism, leadership, and civic responsibility in the Coachella Valley.</p>
+        </div>
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">🏆</div>
+          <h3 style="color:var(--navy);font-size:1rem;">Youth Awards & Contests</h3>
+          <p style="color:#555;">We sponsor annual essay contests, speech competitions, and awards for local high school students, encouraging young people to engage with American Revolutionary history and civic values.</p>
+        </div>
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">🌳</div>
+          <h3 style="color:var(--navy);font-size:1rem;">Genealogy Workshops</h3>
+          <p style="color:#555;">Our genealogy workshops help community members research their family history and potentially discover their own connections to the American Revolution. Open to all interested individuals in the valley.</p>
+        </div>
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">⭐</div>
+          <h3 style="color:var(--navy);font-size:1rem;">Patriot Grave Marking</h3>
+          <p style="color:#555;">We conduct grave marking ceremonies to honor Revolutionary War Patriots interred in the Coachella Valley, ensuring these heroes receive the recognition they deserve.</p>
+        </div>
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">🎉</div>
+          <h3 style="color:var(--navy);font-size:1rem;">Local Events & Celebrations</h3>
+          <p style="color:#555;">We participate in and support patriotic observances throughout the year, including Flag Day, Memorial Day, Veterans Day, and Independence Day celebrations across our desert communities.</p>
+        </div>
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">🇺🇸</div>
+          <h3 style="color:var(--navy);font-size:1rem;">America 250</h3>
+          <p style="color:#555;">In 2026, our nation celebrates its 250th birthday. The Coachella Valley Chapter is actively planning special exhibitions, ceremonies, and community events to mark this once-in-a-generation milestone.</p>
+        </div>
+        <div class="program-card" style="background:var(--white);border:1px solid #ddd5c0;padding:36px 28px;">
+          <div class="program-icon">📜</div>
+          <h3 style="color:var(--navy);font-size:1rem;">ROTC & JROTC Awards</h3>
+          <p style="color:#555;">We recognize outstanding ROTC and JROTC cadets at local schools for their dedication to military service, leadership, and patriotic values.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /programs -->
+
+<!-- ═══════════════════════════ NEWS PAGE ═══════════════════════════ -->
+<div id="page-news" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; News</div>
+    <h1>Chapter News</h1>
+    <p>Stay up to date with our latest activities and announcements</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">March 2026 &nbsp;·&nbsp; Chapter Meeting</div>
+            <h3>March Chapter Meeting Recap</h3>
+            <p>Members gathered for a productive evening. The chapter recognized outstanding service contributions and reviewed plans for upcoming America 250 events.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">February 2026 &nbsp;·&nbsp; Community</div>
+            <h3>Wreaths Across America – Desert Memorial Park</h3>
+            <p>Chapter members honored fallen veterans by placing wreaths at Desert Memorial Park. The community turned out in strong numbers to show support.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">January 2026 &nbsp;·&nbsp; America 250</div>
+            <h3>America 250 Preparations Underway</h3>
+            <p>Our chapter is actively planning events to commemorate the nation's 250th birthday in 2026. A planning committee has been formed.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">December 2025 &nbsp;·&nbsp; Youth</div>
+            <h3>Eagle Scout Award Ceremony</h3>
+            <p>Two outstanding young men received the SAR Eagle Scout Award for their dedication to patriotism and community service.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">November 2025 &nbsp;·&nbsp; Patriotic</div>
+            <h3>Veterans Day Ceremony at College of the Desert</h3>
+            <p>Chapter members participated in a moving Veterans Day ceremony at College of the Desert, honoring all who have served our nation.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-img">★</div>
+          <div class="news-card-body">
+            <div class="news-meta">October 2025 &nbsp;·&nbsp; Genealogy</div>
+            <h3>Genealogy Workshop at Palm Springs Library</h3>
+            <p>An informative and well-attended genealogy workshop was hosted at the Palm Springs Public Library, helping residents trace their family history.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /news -->
+
+<!-- ═══════════════════════════ EVENTS PAGE ═══════════════════════════ -->
+<div id="page-events" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Events</div>
+    <h1>Upcoming Events</h1>
+    <p>Join us for patriotic ceremonies, meetings, and community activities</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">★ &nbsp; 2026 Schedule</div>
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="title-rule"></div>
+      <div class="events-list">
+        <div class="event-item">
+          <div class="event-date"><span class="month">Mar</span><span class="day">20</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Apr</span><span class="day">17</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">May</span><span class="day">15</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Jun</span><span class="day">14</span></div>
+          <div class="event-info">
+            <h4>Flag Day Celebration</h4>
+            <p>Commemorating the adoption of the American flag. Public ceremony welcoming all community members.</p>
+            <span class="event-tag">Patriotic</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Jul</span><span class="day">4</span></div>
+          <div class="event-info">
+            <h4>Independence Day – America 250 Celebration</h4>
+            <p>A landmark celebration marking 250 years of American independence. Special ceremonies, speakers, and community festivities across the valley.</p>
+            <span class="event-tag">America 250</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Nov</span><span class="day">11</span></div>
+          <div class="event-info">
+            <h4>Veterans Day Parade – Palm Springs</h4>
+            <p>Join our carriage as we march in the annual Palm Springs Veterans Day Parade and hand out American Flags. Come show your patriotic spirit and honor our heroic Veterans!</p>
+            <span class="event-tag">Patriotic</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Dec</span><span class="day">13</span></div>
+          <div class="event-info">
+            <h4>National Wreaths Across America Day</h4>
+            <p>Annual wreath-laying ceremony at Desert Memorial Park. Volunteers welcome. More details to follow.</p>
+            <span class="event-tag">Community</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /events -->
+
+<!-- ═══════════════════════════ JOIN PAGE ═══════════════════════════ -->
+<div id="page-join" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Join Us</div>
+    <h1>Join the SAR</h1>
+    <p>Become a member of the Coachella Valley Chapter</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">★ &nbsp; Eligibility</div>
+      <h2 class="section-title">Who Can Join?</h2>
+      <div class="title-rule"></div>
+      <p style="max-width:740px; line-height:1.9; margin-bottom:40px;">Membership in the Sons of the American Revolution is open to any male who is at least 18 years of age and can prove lineal descent from an ancestor who aided in achieving American independence. This includes service in the Continental Army, state militias, or in a patriotic civil capacity.</p>
+      <div class="member-steps">
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <h3>Confirm Your Eligibility</h3>
+          <p>Research your family genealogy to identify an ancestor who served in the American Revolution. The SAR's online database and our genealogy workshops can help.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <h3>Prepare Your Application</h3>
+          <p>Gather documentation — birth, death, and marriage records — linking you to your Patriot ancestor. Our chapter members are happy to assist you through this process.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <h3>Attend a Meeting</h3>
+          <p>Come to one of our monthly meetings to meet our members and submit your application. Meetings are held on the third Tuesday of each month.</p>
+        </div>
+      </div>
+      <div style="margin-top:50px; background:var(--light); padding:40px; border-left:4px solid var(--gold);">
+        <h3 style="font-family:'Cinzel',serif; color:var(--navy); margin-bottom:14px;">Interested in Joining?</h3>
+        <p style="line-height:1.85; margin-bottom:20px;">Reach out to us and a chapter member will be glad to guide you through the application process. We welcome all eligible men who share a passion for American history and patriotism.</p>
+        <a href="#" class="btn btn-gold" onclick="showPage('contact')">Contact Us to Get Started</a>
+      </div>
+    </div>
+  </section>
+</div><!-- /join -->
+
+<!-- ═══════════════════════════ DONATE PAGE ═══════════════════════════ -->
+<div id="page-donate" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Donate</div>
+    <h1>Support Our Chapter</h1>
+    <p>Your generosity funds our patriotic programs and community service</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div style="max-width: 740px;">
+        <div class="section-label">★ &nbsp; Make a Difference</div>
+        <h2 class="section-title">Why Donate?</h2>
+        <div class="title-rule"></div>
+        <p style="line-height:1.9; margin-bottom:16px;">The Coachella Valley Chapter SAR is a 501(c)(3) non-profit organization. All donations are tax-deductible to the extent provided by law. Your generosity directly supports our programs including Wreaths Across America, youth awards, genealogy workshops, and patriotic ceremonies.</p>
+        <p style="line-height:1.9; margin-bottom:36px;">Every dollar contributed helps us honor our Revolutionary War heritage and invest in the next generation of American Patriots right here in the Coachella Valley.</p>
+        <div style="background:var(--light); padding:40px; border-left:4px solid var(--gold);">
+          <h3 style="font-family:'Cinzel',serif; color:var(--navy); margin-bottom:14px;">How to Donate</h3>
+          <p style="line-height:1.85; margin-bottom:20px;">To make a donation to the Coachella Valley Chapter SAR, please contact us directly or bring your contribution to one of our monthly meetings. We accept checks payable to "Coachella Valley Chapter SAR."</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('contact')">Contact Us to Donate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /donate -->
+
+<!-- ═══════════════════════════ CONTACT PAGE ═══════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Contact</div>
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div>
+          <div class="section-label">★ &nbsp; Get in Touch</div>
+          <h2 class="section-title">Contact Information</h2>
+          <div class="title-rule"></div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Mailing Address</h4>
+              <p>Coachella Valley Chapter SAR<br/>Coachella Valley, California</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📅</div>
+            <div>
+              <h4>Monthly Meetings</h4>
+              <p>3rd Tuesday of every month<br/>Palm Desert Community Center<br/>6:30 PM</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="/cdn-cgi/l/email-protection#01626e606269646d6d6077606d6d647872607341666e6e666d6466736e7471722f626e6c" style="color:var(--red);"><span class="__cf_email__" data-cfemail="d5b6bab4b6bdb0b9b9b4a3b4b9b9b0aca6b4a795b2babab2b9b0b2a7baa0a5a6fbb6bab8">[email&#160;protected]</span></a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">🔗</div>
+            <div>
+              <h4>National SAR</h4>
+              <p><a href="https://www.sar.org" target="_blank" style="color:var(--red);">www.sar.org</a></p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="section-title" style="font-size:1.4rem; margin-bottom:28px;">Send Us a Message</h2>
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="John Adams"/>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com"/>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>General Inquiry</option>
+              <option>Membership Interest</option>
+              <option>Genealogy Help</option>
+              <option>Donation</option>
+              <option>Events</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Write your message here..."></textarea>
+          </div>
+          <button class="btn btn-gold" style="width:100%; padding:14px;" onclick="sendEmail()">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /contact -->
+
+<!-- ═══════════════════════════ MEMBERS PAGE ═══════════════════════════ -->
+<div id="page-members" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Our Chapter &nbsp;›&nbsp; Chapter Members</div>
+    <h1>Chapter Members</h1>
+    <p>Our Coachella Valley Members and their Patriot Ancestors</p>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">★ &nbsp; Sons of the American Revolution</div>
+      <h2 class="section-title">Members &amp; Their Patriot Ancestors</h2>
+      <div class="title-rule"></div>
+      <p style="max-width:740px; line-height:1.9; margin-bottom:8px;">Each member of our chapter has documented lineage to a Patriot who served during the American Revolutionary War. Below is a listing of our members and the ancestors through whom they qualify for membership in the Sons of the American Revolution.</p>
+      <div class="members-table-wrap">
+        <table class="members-table">
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Patriot Ancestor</th>
+              <th>Service</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="member-row"><td class="member-name">Raymond Allen</td><td>Beauford Pleasant</td><td>Supplies</td></tr>
+<tr class="member-row"><td class="member-name">Wilbern Allen</td><td>Isaac Olmstead</td><td>Captain</td></tr>
+<tr class="member-row"><td class="member-name">James Amidon</td><td>Roger Amidon</td><td>Militia</td></tr>
+<tr class="member-row"><td class="member-name">David Arthurs, Pres</td><td>Jeremiah Brann</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>Joseph Reeder</td><td>Supply Tax</td></tr>
+<tr class="patriot-row"><td></td><td>William Brann, Sr. *</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>Abraham Fulton</td><td>Supply Tax</td></tr>
+<tr class="patriot-row"><td></td><td>John Boyd</td><td>Captain</td></tr>
+<tr class="member-row"><td class="member-name">David Arthurs, Memorial</td><td>Jeremiah Brann</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Russell Bauer</td><td>John Wilson Langdon</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">John Bennett</td><td>Amos Garnsey</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Brett Bird</td><td>Noah Crooker *</td><td>Drummer</td></tr>
+<tr class="member-row"><td class="member-name">Kevin Bird</td><td>Noah Crooker *</td><td>Drummer</td></tr>
+<tr class="member-row"><td class="member-name">Bryan Boomershine</td><td>Thomas Speakman</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Steven Bottom</td><td>George Carpenter, Sr.</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">William Lavel Brady</td><td>Baxter Davis</td><td>2nd Lieutenant</td></tr>
+<tr class="member-row"><td class="member-name">Steven Brown</td><td>Thomas Lee *</td><td>Captain</td></tr>
+<tr class="member-row"><td class="member-name">Christopher Cerillo</td><td>Joseph Clark</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>Hercules Mooney *</td><td>Lt. Colonel</td></tr>
+<tr class="patriot-row"><td></td><td>Jonathan Mooney *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Sean Core</td><td>Christian Core *</td><td>Oath</td></tr>
+<tr class="member-row"><td class="member-name">Dr. James Cox</td><td>Henry Mills</td><td>Services</td></tr>
+<tr class="member-row"><td class="member-name">Terrel Crary</td><td>Ezra Crary</td><td>Captain</td></tr>
+<tr class="member-row"><td class="member-name">Griffin Cunningham</td><td>Jacob Brown</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Donald Damron</td><td>Tigner Dameron</td><td>Services</td></tr>
+<tr class="member-row"><td class="member-name">Benjamin DeLanty, Secr</td><td>Samuel Callender</td><td>Sergeant</td></tr>
+<tr class="member-row"><td class="member-name">Douglas Enroth</td><td>Jeremiah Wood</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Thomas Foerster</td><td>David Haymaker *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Timothy Foerster</td><td>David Haymaker *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Michael Fox, VP</td><td>John Poulter</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Carl Gilmore</td><td>Rudolph Hines</td><td>Corporal</td></tr>
+<tr class="member-row"><td class="member-name">Richard Griffin</td><td>Joshua Goodson *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">William Haines, Treas</td><td>Henry Haynes</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>Abraham Waglom</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>John Trautman</td><td>Services</td></tr>
+<tr class="patriot-row"><td></td><td>John Waglom</td><td>Captain</td></tr>
+<tr class="patriot-row"><td></td><td>Peter Parker</td><td>Services</td></tr>
+<tr class="patriot-row"><td></td><td>Joseph Seaman</td><td>Services</td></tr>
+<tr class="member-row"><td class="member-name">Michael Hopkins</td><td>John Worster</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Anthony Hoskins</td><td>John Post *</td><td>Qtr Master</td></tr>
+<tr class="member-row"><td class="member-name">Edward Howell</td><td>Thomas Duckett</td><td>Civil Service</td></tr>
+<tr class="member-row"><td class="member-name">James Kearin</td><td>Jeremiah Brann</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Michael Landes</td><td>Jacob Kulp</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Curtis Lane</td><td>William Roarke</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>John Tate, Sr.</td><td>Sergeant</td></tr>
+<tr class="patriot-row"><td></td><td>John Upton</td><td>Corporal</td></tr>
+<tr class="patriot-row"><td></td><td>Henry Garrett</td><td>Captain</td></tr>
+<tr class="patriot-row"><td></td><td>John McMurtry</td><td>Ensign</td></tr>
+<tr class="patriot-row"><td></td><td>Elizabeth Ashton/Garrett</td><td>Services</td></tr>
+<tr class="patriot-row"><td></td><td>William Garrett</td><td>Services</td></tr>
+<tr class="patriot-row"><td></td><td>Thomas Johnson, Jr.</td><td>Captain</td></tr>
+<tr class="patriot-row"><td></td><td>Henry Bloss</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>John Roberts</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>Arthur Slayden *</td><td>Service</td></tr>
+<tr class="member-row"><td class="member-name">Larry Frank Lane, Memorial</td><td>John Roberts *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Layman, Daniel</td><td>William Poage *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Leonard Lyon</td><td>Moses Lyon</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Harry Martin, II</td><td>Andrew Hughes</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Robert McGuire</td><td>Nathan Bassett</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Glenn Morrison</td><td>Ralph Voorhees *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Eugene Moses</td><td>Mark Moses</td><td>Services</td></tr>
+<tr class="patriot-row"><td></td><td>Abraham Perkins</td><td>Captain</td></tr>
+<tr class="patriot-row"><td></td><td>Jacob Thomas</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">James Murray</td><td>Cornelius Stagg</td><td>Sergeant</td></tr>
+<tr class="member-row"><td class="member-name">Edward Oehler</td><td>John Corwin, Sr.</td><td>Lieutenant</td></tr>
+<tr class="patriot-row"><td></td><td>Abner Stanford</td><td>Corporal</td></tr>
+<tr class="member-row"><td class="member-name">Barry Opdyke</td><td>Daniel Ent</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>Richard Opdycke</td><td>Juror</td></tr>
+<tr class="member-row"><td class="member-name">Eli Owens</td><td>William McDowell *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Brennan Pardee</td><td>John Pardee</td><td>Corporal</td></tr>
+<tr class="member-row"><td class="member-name">James "Tony" Pardee</td><td>John Pardee</td><td>Corporal</td></tr>
+<tr class="member-row"><td class="member-name">Tygh Runyan</td><td>Hugh Runyon</td><td>Colonel</td></tr>
+<tr class="member-row"><td class="member-name">Jimmie Rutledge</td><td>John Josling</td><td>Corporal</td></tr>
+<tr class="member-row"><td class="member-name">William Schroeder</td><td>Micah Eldredge</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Jonathan Scott</td><td>John Alexander</td><td>Captain</td></tr>
+<tr class="member-row"><td class="member-name">Richard Shay</td><td>Seth Capron</td><td>Corporal</td></tr>
+<tr class="patriot-row"><td></td><td>Elisha Capron</td><td>Private</td></tr>
+<tr class="patriot-row"><td></td><td>Bezaleel Mann</td><td>Services</td></tr>
+<tr class="member-row"><td class="member-name">Richard Small</td><td>Ephraim Lombard</td><td>Services</td></tr>
+<tr class="member-row"><td class="member-name">Michael Smith</td><td>John Smith</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Kenneth Tebbetts</td><td>Elijah Hayes</td><td>Civil Service</td></tr>
+<tr class="member-row"><td class="member-name">David Thomas</td><td>Henry Gascho</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Vincent Thompson</td><td>William Thompson</td><td>Lieutenant</td></tr>
+<tr class="member-row"><td class="member-name">Dr. Kenneth Vick II, Regr</td><td>William Rowntree</td><td>Sergeant</td></tr>
+<tr class="patriot-row"><td></td><td>Matthew Vick *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Steven Waggoner</td><td>Isaac Waggoner *</td><td>Private</td></tr>
+<tr class="member-row"><td class="member-name">Daren West</td><td>James West *</td><td>Sergeant</td></tr>
+<tr class="member-row"><td class="member-name">Aaron Wilkinson</td><td>Nicholas Straw</td><td>Lieutenant</td></tr>
+<tr class="member-row"><td class="member-name">Duke Young</td><td>David Morgan *</td><td>Captain</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="members-table-note">* Denotes Patriot Ancestor application under review. "Memorial" denotes a memorial membership. Lighter rows indicate additional Patriot ancestors for the member listed above.</p>
+    </div>
+  </section>
+</div><!-- /members -->
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-seal"><img src="logo.jpg" alt="SAR Logo" style="width:100%;height:100%;object-fit:contain;border-radius:4px;"/></div>
+      <p>The Coachella Valley Chapter, Sons of the American Revolution, is a non-profit patriotic organization dedicated to honoring our Revolutionary War heritage and serving the desert communities of Southern California.</p>
+      <div style="display:flex; gap:12px; margin-top:8px;">
+        <a href="#" style="color:var(--gold); font-size:1.2rem; text-decoration:none;">f</a>
+        <a href="#" style="color:var(--gold); font-size:1.2rem; text-decoration:none;">𝕏</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('news')">Chapter News</a></li>
+        <li><a href="#" onclick="showPage('about')">Chapter Officers</a></li>
+        <li><a href="#" onclick="showPage('programs')">Our Programs</a></li>
+        <li><a href="#" onclick="showPage('events')">Events</a></li>
+        <li><a href="#" onclick="showPage('join')">Join SAR</a></li>
+        <li><a href="#" onclick="showPage('donate')">Donate</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Our Programs</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('programs')">Wreaths Across America</a></li>
+        <li><a href="#" onclick="showPage('programs')">Boy & Eagle Scouts</a></li>
+        <li><a href="#" onclick="showPage('programs')">Youth Awards</a></li>
+        <li><a href="#" onclick="showPage('programs')">Genealogy Workshops</a></li>
+        <li><a href="#" onclick="showPage('programs')">Grave Marking</a></li>
+        <li><a href="#" onclick="showPage('programs')">America 250</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Upcoming Events</h4>
+      <div class="footer-event-item">
+        <div class="footer-event-date"><span class="m">Mar</span><span class="d">20</span></div>
+        <div class="footer-event-info">Monthly Chapter Meeting</div>
+      </div>
+      <div class="footer-event-item">
+        <div class="footer-event-date"><span class="m">Apr</span><span class="d">17</span></div>
+        <div class="footer-event-info">Monthly Chapter Meeting</div>
+      </div>
+      <div class="footer-event-item">
+        <div class="footer-event-date"><span class="m">May</span><span class="d">15</span></div>
+        <div class="footer-event-info">Monthly Chapter Meeting</div>
+      </div>
+      <div class="footer-event-item">
+        <div class="footer-event-date"><span class="m">Jul</span><span class="d">4</span></div>
+        <div class="footer-event-info">Independence Day – America 250</div>
+      </div>
+      <div class="footer-event-item">
+        <div class="footer-event-date"><span class="m">Nov</span><span class="d">11</span></div>
+        <div class="footer-event-info">Veterans Day Parade – Palm Springs</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Coachella Valley Chapter, Sons of the American Revolution. All rights reserved.</span>
+    <span>
+      <a href="#">Privacy Policy</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function sendEmail() {
+    const name = document.querySelector('input[placeholder="John Adams"]').value;
+    const subject = document.querySelector('select').value;
+    const message = document.querySelector('textarea').value;
+    const body = encodeURIComponent((name ? 'From: ' + name + '\n\n' : '') + message);
+    window.location.href = 'mailto:coachellavalleysar@googlegroups.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+  }
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + id);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function toggleNav() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+
+  function switchTab(btn, tabId) {
+    btn.closest('.section-inner').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    btn.closest('.section-inner').querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    const tab = document.getElementById(tabId);
+    if (tab) tab.classList.add('active');
+  }
+</script>
+</body>
+</html>
