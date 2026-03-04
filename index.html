@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coachella Valley Chapter – Sons of the American Revolution</title>
+  <link rel="icon" type="image/png" href="favicon.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     :root {
       --navy:   #0a1a3c;
@@ -833,11 +833,9 @@
         <li>
           <a href="#">Our Chapter ▾</a>
           <div class="dropdown">
-            <a href="#" onclick="showPage('about')">Chapter History</a>
-            <a href="#" onclick="showPage('about')">Chapter Mission</a>
+            <a href="#" onclick="showPage('about')">History &amp; Mission</a>
             <a href="#" onclick="showPage('about'); setTimeout(()=>{document.querySelectorAll('#page-about .tab-btn').forEach(b=>b.classList.remove('active')); document.querySelectorAll('#page-about .tab-content').forEach(t=>t.classList.remove('active')); document.querySelector('#page-about .tab-btn[onclick*=tab-officers]').classList.add('active'); document.getElementById('tab-officers').classList.add('active');},10)">Chapter Officers</a>
             <a href="#" onclick="showPage('members')">Chapter Members</a>
-            <a href="#" onclick="showPage('about')">Chapter Photos</a>
           </div>
         </li>
         <li>
@@ -847,7 +845,6 @@
             <a href="#" onclick="showPage('programs')">Boy / Eagle Scouts</a>
             <a href="#" onclick="showPage('programs')">Youth Awards & Contests</a>
             <a href="#" onclick="showPage('programs')">Patriot Grave Marking</a>
-            <a href="#" onclick="showPage('programs')">Local Events</a>
           </div>
         </li>
         <li><a href="#" onclick="showPage('news')">News</a></li>
@@ -894,40 +891,33 @@
       <div class="news-grid">
         <div class="news-card">
           <div class="news-card-img" style="height:190px;overflow:hidden;padding:0;background:none;">
-            <img src="hero.jpg" alt="Chapter Members at Parade" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"/>
+            <img src="feb-meeting-2.jpg" alt="Joint DAR-SAR February Meeting at Mission Hills Country Club" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
           </div>
           <div class="news-card-body">
-            <div class="news-meta">March 2026 &nbsp;·&nbsp; Chapter Meeting</div>
-            <h3>March Chapter Meeting Recap</h3>
-            <p>Members gathered for a productive evening of chapter business, recognizing outstanding service and planning upcoming patriotic events across the valley.</p>
-            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
-          </div>
-        </div>
-        <div class="news-card">
-          <div class="news-card-img">★</div>
-          <div class="news-card-body">
-            <div class="news-meta">February 2026 &nbsp;·&nbsp; Community</div>
-            <h3>Wreaths Across America – Desert Memorial Park</h3>
-            <p>Chapter members honored fallen veterans by placing wreaths at Desert Memorial Park, drawing strong community support despite the cool winter morning.</p>
-            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
+            <div class="news-meta">February 20, 2026 &nbsp;·&nbsp; Chapter Meeting</div>
+            <h3>Annual Joint DAR–SAR Annual Meeting Recap</h3>
+            <p>Our joint annual meeting with the Cahuilla Chapter DAR was held at Mission Hills Country Club. President Dave Arthurs shared the remarkable story of his Native American ancestor Jeremiah Brann, who fought in the Southern Campaign of the Revolution.</p>
           </div>
         </div>
         <div class="news-card">
-          <div class="news-card-img">★</div>
+          <div class="news-card-img" style="height:190px;overflow:hidden;padding:0;background:none;">
+            <img src="jrotc_ball.jpg" alt="JROTC Ball" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
+          </div>
           <div class="news-card-body">
-            <div class="news-meta">January 2026 &nbsp;·&nbsp; America 250</div>
-            <h3>America 250 Preparations Underway</h3>
-            <p>Our chapter is actively planning events and exhibits to commemorate the nation's 250th birthday in 2026. Join us in making this milestone unforgettable.</p>
-            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
+            <div class="news-meta">January 2026 &nbsp;·&nbsp; JROTC Ball</div>
+            <h3>JROTC Ball</h3>
+            <p>Chris Cerillo pictured with Army Reserve Lt. Col Mike Albertson, at the JROTC Ball for Kaiser High School in Fontana with the Army and Navy. This is a joint Ball for the two programs with the Navy as guests from Fontana High School.</p><br>
+            <p>Chris Cerillo gave a speech inspiring the Students to dedicate themselves to Country above themselves and to fellowship with their peers, as did our Ancestors when forming America.  Chris  presented a copy of The American Revolution, by Ken Burns, on behalf of Coachella Valley Chapter, SAR.</p>
           </div>
         </div>
         <div class="news-card">
-          <div class="news-card-img">★</div>
+          <div class="news-card-img" style="height:190px;overflow:hidden;padding:0;background:none;">
+            <img src="burns_award.jpg" alt="JROTC Ball" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
+          </div>
           <div class="news-card-body">
-            <div class="news-meta">December 2025 &nbsp;·&nbsp; Youth</div>
-            <h3>Eagle Scout Award Ceremony</h3>
-            <p>The Coachella Valley Chapter proudly presented the SAR Eagle Scout Award to two outstanding young men for their dedication to patriotism and community.</p>
-            <a href="#" class="read-more" onclick="showPage('news')">Read More →</a>
+            <div class="news-meta">January 27, 2026 &nbsp;·&nbsp; Rancho Mirage Writer's Conference</div>
+            <h3>Ken Burns SAR Award</h3>
+            <p>SAR and our Coachella Valley Chapter were represented last night at the Rancho Mirage Writer's Festival. Ken Burns was their opening night speaker. Before the presentation, President General Michael J. Elston gave Ken Burns an award for his groundbreaking documentary work on the American Revolution.</p>
           </div>
         </div>
       </div>
@@ -1137,7 +1127,7 @@
             <p style="line-height:1.8;">Every year, our chapter marches in the annual Palm Springs Veterans Day Parade in honor of our heroic Veterans. We march with a horse-drawn carriage and dressed in Continental Army Uniforms showing our appreciation for our Veterans.</p>
           </div>
         </div>
-        <p style="max-width:740px; line-height:1.9; margin-bottom:16px;">The Coachella Valley Chapter welcomes all those interested in the chapter's objectives to join them at their monthly meetings. The chapter meets on the third Friday of each month at 11:30 AM, September through May, at the Mission Hills Country Club in Rancho Mirage.</p>
+        <p style="max-width:740px; line-height:1.9; margin-bottom:16px;">The Coachella Valley Chapter welcomes all those interested in the chapter's objectives to join them at their monthly meetings. The chapter meets on the third Friday of each month at 11:30 AM, October through May, at the Mission Hills Country Club in Rancho Mirage.</p>
         <p style="max-width:740px; line-height:1.9;">For more information, please email us at <a href="mailto:coachellavalleysar@googlegroups.com" style="color:var(--red);">coachellavalleysar@googlegroups.com</a>.</p>
       </div>
 
@@ -1169,36 +1159,131 @@
         <div class="section-label">★ &nbsp; Leadership</div>
         <h2 class="section-title">Chapter Officers</h2>
         <div class="title-rule"></div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; margin-top:8px;">
-          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
-            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
-            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">PRESIDENT</div>
-            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">David Arthurs</div>
+        <style>
+          .officer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 28px;
+            margin-top: 16px;
+          }
+          .officer-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-top: 3px solid var(--gold);
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+          }
+          .officer-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+          }
+          .officer-photo-wrap {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: var(--light);
+            position: relative;
+          }
+          .officer-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+          }
+          .officer-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            color: var(--gold);
+            font-size: 3rem;
+          }
+          .officer-info {
+            padding: 18px 16px 20px;
+          }
+          .officer-role {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: .12em;
+            color: var(--gold);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+          }
+          .officer-name {
+            font-family: 'Cinzel', serif;
+            color: var(--navy);
+            font-size: 0.92rem;
+            line-height: 1.3;
+          }
+        </style>
+        <div class="officer-grid">
+          <div class="officer-card">
+            <div class="officer-photo-wrap">
+              <img src="david_arthurs.jpeg" alt="David Arthurs, President"/>
+            </div>
+            <div class="officer-info">
+              <div class="officer-role">President</div>
+              <div class="officer-name">David Arthurs</div>
+            </div>
           </div>
-          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
-            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
-            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">VICE PRESIDENT</div>
-            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Michael J. Fox</div>
+          <div class="officer-card">
+            <div class="officer-photo-wrap">
+              <img src="michael_fox.jpeg" alt="Michael Fox, Vice President"/>
+            </div>
+            <div class="officer-info">
+              <div class="officer-role">Vice President</div>
+              <div class="officer-name">Michael Fox</div>
+            </div>
           </div>
-          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
-            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
-            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">TREASURER</div>
-            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">William Haines</div>
+          <div class="officer-card">
+            <div class="officer-photo-wrap">
+              <img src="william_haines.jpg" alt="William Haines, Treasurer"/>
+            </div>
+            <div class="officer-info">
+              <div class="officer-role">Treasurer</div>
+              <div class="officer-name">William Haines</div>
+            </div>
           </div>
-          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
-            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
-            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">REGISTRAR</div>
-            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Dr. Kenneth Vick</div>
+          <div class="officer-card">
+            <div class="officer-photo-wrap">
+              <img src="kenneth_vick.jpeg" alt="Dr. Kenneth Vick, Registrar"/>
+            </div>
+            <div class="officer-info">
+              <div class="officer-role">Registrar</div>
+              <div class="officer-name">Dr. Kenneth Vick</div>
+            </div>
           </div>
-          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
-            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">★</div>
-            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">SECRETARY</div>
-            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Benjamin DeLanty</div>
+          <div class="officer-card">
+            <div class="officer-photo-wrap">
+              <img src="benjamin_delanty.jpeg" alt="Benjamin DeLanty, Secretary"/>
+            </div>
+            <div class="officer-info">
+              <div class="officer-role">Secretary</div>
+              <div class="officer-name">Benjamin DeLanty</div>
+            </div>
           </div>
-          <div style="background:var(--white); border:1px solid #ddd; border-top:3px solid var(--gold); padding:24px; text-align:center;">
-            <div style="width:60px;height:60px;background:var(--navy);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;">✝</div>
-            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">CHAPLAIN</div>
-            <div style="font-family:'Cinzel',serif;color:var(--navy);font-size:0.95rem;">Ed Oehler</div>
+          <div class="officer-card">
+            <div class="officer-photo-wrap">
+              <img src="edward_oehler.jpg" alt="Ed Oehler, Chaplain"/>
+            </div>
+            <div class="officer-info">
+              <div class="officer-role">Chaplain</div>
+              <div class="officer-name">Edward Oehler</div>
+            </div>
+          </div>
+          <div class="officer-card">
+            <div class="officer-photo-wrap">
+              <img src="chris_cerillo.jpg" alt="Chris Cerillo, Pres Emeritus"/>
+            </div>
+            <div class="officer-info">
+              <div class="officer-role">Pres Emeritus</div>
+              <div class="officer-name">Christopher Cerillo</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1379,48 +1464,34 @@
     <div class="section-inner">
       <div class="news-grid">
         <div class="news-card">
-          <div class="news-card-img">★</div>
+          <div class="news-card-img" style="height:190px;overflow:hidden;padding:0;background:none;">
+            <img src="feb-meeting-2.jpg" alt="Joint DAR-SAR February Meeting at Mission Hills Country Club" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
+          </div>
           <div class="news-card-body">
-            <div class="news-meta">March 2026 &nbsp;·&nbsp; Chapter Meeting</div>
-            <h3>March Chapter Meeting Recap</h3>
-            <p>Members gathered for a productive evening. The chapter recognized outstanding service contributions and reviewed plans for upcoming America 250 events.</p>
-            <a href="#" class="read-more">Read More →</a>
+            <div class="news-meta">February 20, 2026 &nbsp;·&nbsp; Chapter Meeting</div>
+            <h3>Annual Joint DAR–SAR Annual Meeting Recap</h3>
+            <p>Our joint annual meeting with the Cahuilla Chapter DAR was held at Mission Hills Country Club. President Dave Arthurs shared the remarkable story of his Native American ancestor Jeremiah Brann, who fought in the Southern Campaign of the Revolution.</p>
           </div>
         </div>
         <div class="news-card">
-          <div class="news-card-img">★</div>
+          <div class="news-card-img" style="height:190px;overflow:hidden;padding:0;background:none;">
+            <img src="jrotc_ball.jpg" alt="JROTC Ball" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
+          </div>
           <div class="news-card-body">
-            <div class="news-meta">February 2026 &nbsp;·&nbsp; Community</div>
-            <h3>Wreaths Across America – Desert Memorial Park</h3>
-            <p>Chapter members honored fallen veterans by placing wreaths at Desert Memorial Park. The community turned out in strong numbers to show support.</p>
-            <a href="#" class="read-more">Read More →</a>
+            <div class="news-meta">January 2026 &nbsp;·&nbsp; JROTC Ball</div>
+            <h3>JROTC Ball</h3>
+            <p>Chris Cerillo pictured with Army Reserve Lt. Col Mike Albertson, at the JROTC Ball for Kaiser High School in Fontana with the Army and Navy. This is a joint Ball for the two programs with the Navy as guests from Fontana High School.</p><br>
+            <p>Chris Cerillo gave a speech inspiring the Students to dedicate themselves to Country above themselves and to fellowship with their peers, as did our Ancestors when forming America.  Chris  presented a copy of The American Revolution, by Ken Burns, on behalf of Coachella Valley Chapter, SAR.</p>
           </div>
         </div>
         <div class="news-card">
-          <div class="news-card-img">★</div>
-          <div class="news-card-body">
-            <div class="news-meta">January 2026 &nbsp;·&nbsp; America 250</div>
-            <h3>America 250 Preparations Underway</h3>
-            <p>Our chapter is actively planning events to commemorate the nation's 250th birthday in 2026. A planning committee has been formed.</p>
-            <a href="#" class="read-more">Read More →</a>
+          <div class="news-card-img" style="height:190px;overflow:hidden;padding:0;background:none;">
+            <img src="burns_award.jpg" alt="JROTC Ball" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
           </div>
-        </div>
-        <div class="news-card">
-          <div class="news-card-img">★</div>
           <div class="news-card-body">
-            <div class="news-meta">December 2025 &nbsp;·&nbsp; Youth</div>
-            <h3>Eagle Scout Award Ceremony</h3>
-            <p>Two outstanding young men received the SAR Eagle Scout Award for their dedication to patriotism and community service.</p>
-            <a href="#" class="read-more">Read More →</a>
-          </div>
-        </div>
-        <div class="news-card">
-          <div class="news-card-img">★</div>
-          <div class="news-card-body">
-            <div class="news-meta">November 2025 &nbsp;·&nbsp; Patriotic</div>
-            <h3>Veterans Day Ceremony at College of the Desert</h3>
-            <p>Chapter members participated in a moving Veterans Day ceremony at College of the Desert, honoring all who have served our nation.</p>
-            <a href="#" class="read-more">Read More →</a>
+            <div class="news-meta">January 27, 2026 &nbsp;·&nbsp; Rancho Mirage Writer's Conference</div>
+            <h3>Ken Burns SAR Award</h3>
+            <p>SAR and our Coachella Valley Chapter were represented last night at the Rancho Mirage Writer's Festival. Ken Burns was their opening night speaker. Before the presentation, President General Michael J. Elston gave Ken Burns an award for his groundbreaking documentary work on the American Revolution.</p>
           </div>
         </div>
       </div>
@@ -1482,6 +1553,22 @@
           </div>
         </div>
         <div class="event-item">
+          <div class="event-date"><span class="month">Sep</span><span class="day">18</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Oct</span><span class="day">16</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+        <div class="event-item">
           <div class="event-date"><span class="month">Nov</span><span class="day">11</span></div>
           <div class="event-info">
             <h4>Veterans Day Parade – Palm Springs</h4>
@@ -1490,11 +1577,27 @@
           </div>
         </div>
         <div class="event-item">
+          <div class="event-date"><span class="month">Nov</span><span class="day">20</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
+          </div>
+        </div>
+        <div class="event-item">
           <div class="event-date"><span class="month">Dec</span><span class="day">13</span></div>
           <div class="event-info">
             <h4>National Wreaths Across America Day</h4>
             <p>Annual wreath-laying ceremony at Desert Memorial Park. Volunteers welcome. More details to follow.</p>
             <span class="event-tag">Community</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="month">Dec</span><span class="day">18</span></div>
+          <div class="event-info">
+            <h4>Monthly Chapter Meeting</h4>
+            <p>Regular chapter business meeting and informational topics are presented. All members, prospects, and guests are invited to attend. We convene at 11:30am at the Mission Hills Country Club. There is a $35 fee for lunch served by the Country Club in the Dinah Shore Room. Tell the guard you are here for the SAR meeting to gain entrance. Valet parking is free.</p>
+            <span class="event-tag">Meeting</span>
           </div>
         </div>
       </div>
@@ -1514,12 +1617,12 @@
       <div class="section-label">★ &nbsp; Eligibility</div>
       <h2 class="section-title">Who Can Join?</h2>
       <div class="title-rule"></div>
-      <p style="max-width:740px; line-height:1.9; margin-bottom:40px;">Membership in the Sons of the American Revolution is open to any male who is at least 18 years of age and can prove lineal descent from an ancestor who aided in achieving American Independence. This includes service in the Continental Army, state militias, or in a patriotic civil capacity.</p>
+      <p style="max-width:740px; line-height:1.9; margin-bottom:40px;">Membership in the Sons of the American Revolution is open to any male who is at least 18 years of age and can prove lineal descent from an ancestor who aided in achieving American Independence. This includes service in the Continental Army, State Militias, by Oath of Allegiance, providing Supplies or Funds to the Cause, or in a Patriotic Civil capacity.</p>
       <div class="member-steps">
         <div class="step-card">
           <span class="step-num">01</span>
           <h3>Confirm Your Eligibility</h3>
-          <p>Research your family genealogy to identify an ancestor who served in the American Revolution. The SAR's online database and our genealogy workshops can help.</p>
+          <p>Research your family genealogy to identify an ancestor who served in the American Revolution. The SAR's online database and our chapter members can help guide you.</p>
         </div>
         <div class="step-card">
           <span class="step-num">02</span>
@@ -1534,8 +1637,9 @@
       </div>
       <div style="margin-top:50px; background:var(--light); padding:40px; border-left:4px solid var(--gold);">
         <h3 style="font-family:'Cinzel',serif; color:var(--navy); margin-bottom:14px;">Interested in Joining?</h3>
-        <p style="line-height:1.85; margin-bottom:20px;">Reach out to us and a chapter member will be glad to guide you through the application process. We welcome all eligible men who share a passion for American history and patriotism.</p>
-        <a href="#" class="btn btn-gold" onclick="showPage('contact')">Contact Us to Get Started</a>
+        <p style="line-height:1.85; margin-bottom:20px;">Reach out to us and a chapter member will be glad to guide you through the application process. We welcome all eligible men who share a passion for American History and Patriotism.</p>
+        <a href="#" class="btn btn-gold" onclick="showPage('contact')">Contact Us to Get Started</a>&nbsp;&nbsp;or&nbsp;&nbsp;
+        <a href="https://www.sar.org/how-to-apply/" class="btn btn-gold" target="_blank">Visit the National SAR Website</a>
       </div>
     </div>
   </section>
@@ -1584,21 +1688,29 @@
             <div class="contact-icon">📍</div>
             <div>
               <h4>Mailing Address</h4>
-              <p>Coachella Valley Chapter SAR<br/>Coachella Valley, California</p>
+              <p>Coachella Valley Chapter SAR<br/>2444 S. Sierra Madre<br/>
+              Palm Springs, CA 92264</p>
             </div>
           </div>
           <div class="contact-info-item">
             <div class="contact-icon">📅</div>
             <div>
               <h4>Monthly Meetings</h4>
-              <p>3rd Tuesday of every month<br/>Palm Desert Community Center<br/>6:30 PM</p>
+              <p>3rd Friday of the Month / September - May<br/>Mission Hills Country Club<br/>Rancho Mirage, California<br/>11:30 AM</p>
             </div>
           </div>
           <div class="contact-info-item">
             <div class="contact-icon">✉️</div>
             <div>
               <h4>Email</h4>
-              <p><a href="/cdn-cgi/l/email-protection#01626e606269646d6d6077606d6d647872607341666e6e666d6466736e7471722f626e6c" style="color:var(--red);"><span class="__cf_email__" data-cfemail="d5b6bab4b6bdb0b9b9b4a3b4b9b9b0aca6b4a795b2babab2b9b0b2a7baa0a5a6fbb6bab8">[email&#160;protected]</span></a></p>
+              <p><a href="mailto:coachellavalleysar@googlegroups.com" style="color:var(--red);">coachellavalleysar@googlegroups.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">🔗</div>
+            <div>
+              <h4>California Society SAR</h4>
+              <p><a href="https://www.californiasar.org" target="_blank" style="color:var(--red);">www.californiasar.org</a></p>
             </div>
           </div>
           <div class="contact-info-item">
@@ -1624,7 +1736,6 @@
             <select>
               <option>General Inquiry</option>
               <option>Membership Interest</option>
-              <option>Genealogy Help</option>
               <option>Donation</option>
               <option>Events</option>
               <option>Other</option>
@@ -1768,8 +1879,7 @@
       <div class="footer-logo-seal"><img src="logo.jpg" alt="SAR Logo" style="width:100%;height:100%;object-fit:contain;border-radius:4px;"/></div>
       <p>The Coachella Valley Chapter, Sons of the American Revolution, is a non-profit patriotic organization dedicated to honoring our Revolutionary War heritage and serving the desert communities of Southern California.</p>
       <div style="display:flex; gap:12px; margin-top:8px;">
-        <a href="#" style="color:var(--gold); font-size:1.2rem; text-decoration:none;">f</a>
-        <a href="#" style="color:var(--gold); font-size:1.2rem; text-decoration:none;">𝕏</a>
+        <a href="https://www.facebook.com/coachella.valley.sar" target="_blank" rel="noopener" style="color:var(--gold); font-size:1.2rem; text-decoration:none;">f</a>
       </div>
     </div>
     <div>
@@ -1782,6 +1892,11 @@
         <li><a href="#" onclick="showPage('join')">Join SAR</a></li>
         <li><a href="#" onclick="showPage('donate')">Donate</a></li>
         <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        <li><a href="https://cahuilla.californiadar.org" target="_blank">Cahuilla Chapter DAR (Sister Chapter)</a></li>
+        <li><a href="https://www.nscar.org/Default.aspx" target="_blank">Children of the American Revolution (NSCAR)</a></li>
+        <li><a href="https://www.dar.org" target="_blank">National DAR</a></li>
+        <li><a href="https://www.californiasar.org" target="_blank">California Society SAR</a></li>
+        <li><a href="https://www.sar.org" target="_blank">National SAR</a></li>
       </ul>
     </div>
     <div>
@@ -1790,7 +1905,6 @@
         <li><a href="#" onclick="showPage('programs')">Wreaths Across America</a></li>
         <li><a href="#" onclick="showPage('programs')">Boy & Eagle Scouts</a></li>
         <li><a href="#" onclick="showPage('programs')">Youth Awards</a></li>
-        <li><a href="#" onclick="showPage('programs')">Genealogy Workshops</a></li>
         <li><a href="#" onclick="showPage('programs')">Grave Marking</a></li>
         <li><a href="#" onclick="showPage('programs')">America 250</a></li>
       </ul>
@@ -1828,7 +1942,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function sendEmail() {
     const name = document.querySelector('input[placeholder="John Adams"]').value;
     const subject = document.querySelector('select').value;
@@ -1851,10 +1965,9 @@
 
   function switchTab(btn, tabId) {
     btn.closest('.section-inner').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
     btn.closest('.section-inner').querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-    const tab = document.getElementById(tabId);
-    if (tab) tab.classList.add('active');
+    btn.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
   }
 </script>
 </body>
